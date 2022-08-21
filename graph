@@ -1,0 +1,16 @@
+#此函数用于清空矩阵
+def memset(g,value,maxn):
+    for i in range(maxn):
+        g.append([])
+        for j in range(maxn):
+            g[i].append(0)
+#邻接矩阵建图
+maxn=int(3) #图中点的最大数量
+g=[] #邻接矩阵 g[u][v]表示u->v的边的数量
+memset(g,0,maxn)
+#输入点数与边数，后面可以利用边的数量来限制输入的关系数量
+n,m=map(int,input("请输入图的点数和边数：").split())
+for i in range(1,m+1):
+    v,u=map(int,input("请输入每一条边（示例：1 2表示1到2有一条边）").split())
+    g[v-1][u-1]=1
+print(g)
